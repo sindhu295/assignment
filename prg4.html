@@ -1,0 +1,49 @@
+zrt<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<body>
+<input type="text" id="str" placeholder="enter a number/string">
+<input type="submit" onclick="result();" value="submit" name="sub">
+<div id="result"></div>
+<script>
+function result()
+{
+var str=document.getElementById("str").value;
+if(Number.isInteger(parseInt(str)))
+{
+var num=parseInt(str),rev=0,rem=0;
+while(num>0)
+{
+rem=parseInt(num%10);
+rev=rev*10+rem;
+num=parseInt(num/10);
+
+}
+document.getElementById("result").innerHTML="<p>Reverse is:"+rev+"</p>"
+}
+else{
+for(var i=0;i<str.length;i++)
+{
+if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i'|| str.charAt(i)=='o'|| str.charAt(i)=='u')
+{
+var count=i+1;
+document.getElementById("result").innerHTML="<p>First vowel is at "+count+"</p>"
+exit;
+}
+}
+document.getElementById("result").innerHTML="<p>no vowels found in th string</p>"
+}
+}
+</script>
+
+
+</body>
+</html>
+
+
+
